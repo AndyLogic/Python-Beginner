@@ -1,0 +1,28 @@
+import random
+play = ""
+rando = ""
+
+def randomnumber():
+    global rando
+    rando = random.randint(1, 10)
+
+def letsplay():
+    print("\n-----WELCOME TO THE MAGICAL GUESSING GAME-----")
+    print("-----We Guess that you love guessing-----")
+    play = input('\n \n    -----Would you like to play?----- \n')
+
+def firstguess():
+    print('First Guess Time')
+    guess = int(input('Please type your first guess : '))
+    if guess == rando:
+        print("Great work man!")
+    else:
+        print('Second Guess Time')
+        guess = int(input('Please type your next guess : '))
+
+randomnumber()
+print(rando)
+letsplay()
+while play == "Yes":
+    firstguess()
+    break
