@@ -19,7 +19,12 @@ def guess():
     guess = ""
     rando = random.randint(1, 10)
     while guess != rando:
-        guess = int(input('Please type your first guess : '))
+        while True:
+            try:
+                guess = int(input('Please type your guess : '))
+                break
+            except ValueError:
+                print("Sorry, this is not a number. Try again")
         if guess == rando:
             print("Great work man!")
         elif guess < rando:
@@ -29,11 +34,8 @@ def guess():
         else:
             print("Are you sure you are doing this righ!")
 
-
-
 def main():
     intro()
     guess()
-
 
 main()
