@@ -21,21 +21,22 @@ def guess():
     while guess != rando:
         while True:
             try:
-                guess = int(input('Please type your guess : '))
+                guess = int(input('Please type a number between 1 and 10 as your guess : '))
                 break
             except ValueError:
                 print("Sorry, this is not a number. Try again")
-        if guess == rando:
+        if guess < 1 or guess >= 10:
+            print('Your number is not within the range 1 - 10, please guess again')
+        elif guess == rando:
             print("Great work man!")
         elif guess < rando:
-            print('Your Guess was too high please type your next guess')
-        elif guess > rando:
             print('Your Guess was too low please type your next guess')
-        else:
-            print("Are you sure you are doing this righ!")
+        elif guess > rando:
+            print('Your Guess was too high please type your next guess')
 
 def main():
     intro()
     guess()
 
-main()
+if __name__ == "__main__":
+    main()
