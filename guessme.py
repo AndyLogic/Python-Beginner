@@ -25,7 +25,7 @@ def guess():
                 break
             except ValueError:
                 print("Sorry, this is not a number. Try again")
-        if guess < 1 or guess >= 10:
+        if guess < 1 or guess > 10:
             print('Your number is not within the range 1 - 10, please guess again')
         elif guess == rando:
             print("Great work man!")
